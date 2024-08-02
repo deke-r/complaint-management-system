@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+    <link rel="icon" href="/static/images/logo2.png">
+    <link rel="stylesheet" href="/static/css/complaint_resolution.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('partials/sidebar.ejs') %>
+
+            <div class="main">
+                <%- include('partials/header.ejs') %>
+
+
+
+
+
+                    <section class="page">
+
+                        <div class="container-fluid my-2">
+                            <div class="row">
+                                <div class="col-12 f_80 fw_bold">
+                                    <i class="fa fa-home"></i> Dashboard / Tickets / Product Related Ticket Lists
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container-fluid my-3  pt-4">
+                            <div class="container-fluid mt-3 rounded-3 border_t_g newmp bg-light py-4">
+                                <div class="row mx-2">
+                                    <div class="col-12">
+                                        <h6 class="f_16 fw_600">Ticket Lists</h6>
+                                        <hr class="mt-0">
+                                    </div>
+                                </div>
+                                <div class="row mx-2 mt-3 mb-4">
+                                    <div class="col-12">
+                                        <button class="btn bg_b box_sdw11 f_13 fw_600 text-light">Download</button>
+                                    </div>
+                                </div>
+                                <div class="row mt-2 mx-2">
+                    
+                                    <div class=" table-responsive  px-2  h_350  me-2">
+                    
+                                        <table class="table table-bordered table-responsive  table-striped" id="dataTables">
+                                            <thead id="thead">
+                                                <tr>
+                                                    <th>View</th>
+                                                    <th>Status</th>
+                                                    <th>Ticket Date</th>
+                                                    <th>Ticket No.</th>
+                                                    <th>Issue Type</th>
+                                                    <th>TAT</th>
+                                                    <th>SLA</th>
+                                                    <th>Ticket Raised By</th>
+                                                    <th>Remarks</th>
+                                                    <th>Product Category</th>
+                                                    <th>Product Name</th>
+                                                    <th>SKU Name</th>
+                                                    <th>Batch No</th>
+                                                    <th> Manufacturing Date</th>
+                                                    <th>Customer Name</th>
+                                                    <th>Customer Type</th>
+                                                    <th>Customer Location</th>
+                                                    <th>Quantity Purchase</th>
+                                                    <th>Quantity Rejected</th>
+                                                    <th>Visit Type</th>
+                                                    <th>Person Met</th>
+                                                    <th>Customer Phone</th>
+                                                    <th>Close By</th>
+                                                    <th>Close At</th>
+                                                    <th>Resolve By</th>
+                                                    <th>Resolve At</th>
+                                                    <th>Investigation details</th>
+                                                    <th>Close Comment</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody">
+                                                <tr class="text-secondary">
+                                                    <td>
+                                                        <!-- <div class="border rounded-3 px-0 py-2 bg_gg"> -->
+                                                            <a class="f_15 text_blue" href="/complaint_view"><i class="fa-solid fa-eye"></i></a>
+                                                        <!-- </div> -->
+                                                    </td>
+                                                    <td>Closed</td>
+                                                    <td>2023-06-05</td>
+                                                    <td>194</td>
+                                                    <td>Other Product Related Issue</td>
+                                                    <td>55 min</td>
+                                                    <td>Within SLA (0 min min)</td>
+                                                    <td>Abhimnyu Bharti</td>
+                                                    <td>test</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr class="text-secondary">
+                                                    <td>
+                                                            <a class="f_15 text_blue" href="#"><i class="fa-solid fa-eye"></i></a>
+                                                    </td>
+                                                    <td>Resolved</td>
+                                                    <td>2023-02-24</td>
+                                                    <td>19</td>
+                                                    <td>Other Product Related Issue</td>
+                                                    <td>2 min</td>
+                                                    <td></td>
+                                                    <td>Aakash Gupta</td>
+                                                    <td>maskingtape16m - 8box not sticking</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                    
+                    
+                    
+                    
+                                            </tbody>
+                                        </table>
+                    
+                                    </div>
+                    
+                    
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </section>
+
+
+
+
+
+
+
+                    <script src="/static/js/complaint_resolution.js"></script>
+</body>
+
+</html>

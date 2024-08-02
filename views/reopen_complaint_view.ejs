@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS</title>
+  <link rel="icon" href="/static/images/logo2.png">
+  <link rel="stylesheet" href="/static/css/reopen_complaint_view.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <%- include('partials/sidebar.ejs') %>
+
+    <div class="main">
+      <%- include('partials/header.ejs') %>
+
+      <div id="emp_role" hidden><%= role%></div>
+      <div id="emp_designation" hidden><%= designation%></div>
+      <div id="reopen_ticket_id" hidden><%= reopen_ticket_id%></div>
+      <div id="customer_type" hidden><%= data1[0].customer_type%></div>
+      <div id="person_meet" hidden><%= data1[0].person_meet%></div>
+      <div id="sales_person_ph_no" hidden><%= data1[0].emp_number%></div>
+
+
+<!------------------- loader --------------->
+<!------------------- loader --------------->
+<!------------------- loader --------------->
+<div class="loader-div d-none" id="loader-id">
+  <div class="loader">
+      <img src="/static/loader/Pulse-1s-200px (1).gif" alt="Loading...">
+  </div>
+</div>
+<!------------------- loader --------------->
+<!------------------- loader --------------->
+<!------------------- loader --------------->
+
+
+      <section class="page">
+
+
+
+
+        <div class="container-fluid my-2">
+          <div class="row">
+            <div class="col-12 f_80 fw_bold">
+              <i class="fa fa-home"></i> Dashboard / Tickets / View Ticket
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- <div class="container-fluid p-0 mt-2  gray_tab"> -->
+        <div class="container-fluid mt-4 mb-4">
+          <div class="container-fluid mt-3 border_t_g newmp bg-light py-2 rounded-3">
+            <div class="row">
+              <div class="col-12">
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                      <div><i class="fa fa-home"></i></div>
+                      <div class="f_13 fw_600">Overview</div>
+                    </button>
+                    <!-- <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                                    data-bs-target="#nav-profile" type="button" role="tab"
+                                                    aria-controls="nav-profile" aria-selected="false">
+                                                    <div><i class="fa-solid fa-envelope"></i></div>
+                                                    <div class="f_13 fw_600">Comments</div>
+                                                </button> -->
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
+                      <div class=""><i class="fa fa-info"></i></div>
+                      <div class="f_13 fw_600">Status Track</div>
+                    </button>
+                  </div>
+                </nav>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="tab-content" id="nav-tabContent">
+
+
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+
+
+            <div class="container-fluid mt-4 mb-4 ">
+              <div class="container-fluid mt-3  border_t_g newmp bg-light py-2 rounded-3 ">
+
+
+                <div class="row mt-2  pb-3 mx-1 mx-sm-0 mx-lg-3">
+
+
+
+
+                  <div class="container newmp2 mt-1 py-2 ">
+                    <div class="row">
+                      <div class="col-md-6 f_13 ">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6   text-nowrap fw_bold ">Reopen Ticket No:</div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600 " >
+                            <%= data1[0].reopen_ticket_id %>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  text-nowrap fw_bold">Previous Ticket No.:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600" id="pre_ticket_id">
+                            <%= data1[0].pre_ticket_id %>                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+
+                  </div>
+
+
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      
+                      <div class="col-md-6 f_13 ">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  fw_bold ">Ticket Reopen By:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend fw_600 " id="tkt_cret_by">
+                            <%= data1[0].reopen_tkt_raised_by %>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  fw_bold">Per Ticket Created By:</div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600">
+                            <%= data1[0].pre_tkt_raised_by %>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+                  
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  fw_bold">Reopen Ticket Created On:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600" id="reopen_tkt_crt_date">
+                            <%= data1[0].reopen_ticket_Created_on %>
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  fw_bold">Pre Ticket Created On:</div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="pre_tkt_crt_date">
+                          <%= data1[0].pre_ticket_Created_on %>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+
+                  
+
+
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  text-nowrap fw_bold">Category:</div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600" id="ticket_catgy">
+                            <!-- <span>Product Related</span> -->
+                            <%= data1[0].ticket_category%>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">Issue Type:</div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="ticket_type">
+                            <!-- Slow Drying Time -->
+                            <%= data1[0].ticket_type%>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  text-nowrap fw_bold">Ticket Status:</div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600 " id="ticket_status">
+                            <%= data1[0].is_active %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">Product Category:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="product_catgy" >
+                            <!-- WWA -->
+                            <%= data1[0].product_category%>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6   fw_bold">Product Name:</div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600" id="product_name">
+                            <!-- <span>AJ5003-JIVANJOR SUPREMO</span> -->
+                            <%= data1[0].product_name%>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">SKU Name:</div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="sku">
+                            <!-- AJ5003K09-SUPREMO - BUCKET 20 kg -->
+                            <%= data1[0].sku%>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div> 
+
+
+                  
+                  <div class="container newmp2 mt-1 py-2 ">
+                    <div class="row">
+                      <div class="col-md-6 f_13 ">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-4 col-md-12  text-wrap fw_bold  text-center text-md-start pb-3 pb-lg-0 ">Images & Video:</div>
+                          <div class="col-xl-9 col-lg-8 col-md-12 teend  fw_600 ">
+
+                            <div class="row">
+                              
+                              <div class="col-md-4 col-sm-4  d-flex justify-content-center align-items-center">
+                                <div class="row">
+                                  <div class="col-12">
+
+                                    <div class="w_h_50 ">
+                                      <!-- <img src="/static/images/wp11845597-satoru-gojo-4k-wallpapers.jpg" alt="img" class="img_inlarge" height="50px" > -->
+                                      <img src="/static/images/<%= data1[0].front_image%>" alt="img" class="img_inlarge w-100 h-100 ">
+                                    </div>
+                                    <div class="">Image 1</div>
+                                  
+                                  </div>
+                                </div>
+                                
+                              </div>
+
+
+
+                              <div class="col-md-4 col-sm-4  d-flex justify-content-center align-items-center">
+                                <div class="row">
+                                  <div class="col-12">
+
+                                <div class="w_h_50 ">
+                                  <img src="/static/images/<%= data1[0].back_image%>" alt="img" class="img_inlarge w-100 h-100" >
+                                </div>
+                                <div class="">Image 2</div>
+                                </div>
+                              </div>
+                              </div>
+                              
+                              <div class="col-md-4 col-sm-4  d-flex justify-content-center align-items-center">
+                                <div class="row">
+                                  <div class="col-12">
+
+                                <div class="w_h_50"> 
+                                  <video  class="img_inlarge22 w-100 h-100 "  playbackRate="1"  >
+                                    <source src="/static/videos/<%= data1[0].video_link %>" type="video/mp4">
+                                    <% console.log(data1[0].video_link,'23qqqqqq111')%>
+                                    Your browser does not support the video tag.
+                                </video>
+                                  </div>
+                                <div>Video</div>
+                            </div>
+                            </div>
+                            </div>
+
+                            </div>
+                            
+
+
+
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 ">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">Batch No.:</div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="batch_no">
+                            <!-- 324585C-PR -->
+                            <%= data1[0].batch_no%>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  text-nowrap fw_bold">Manufacturing Date:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600" id="manufacturing_date">
+                            <!-- <span>10-4-2023</span> -->
+                            <%= data1[0].manufacturing_date%>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">Remarks Issue:</div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="remarks_issue">
+                            <!-- Product is taking very long time to dry . -->
+                            <%= data1[0].description %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  text-nowrap fw_bold">Assigned user:</div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600">
+                            <div><b>TO:</b> <%=data_1[0].EMP_NAME %> </div>
+                            <div><b>CC:</b> <% data_2.forEach(function(empName, index) { %>
+                              
+                              <% if (index !== 0) { %>
+                                  <span> | </span>
+                              <% } %>
+                              <span><%= empName %></span>
+                              <% console.log(empName,'empName') %>
+                          <% }); %>
+                          <%= data_4[0].EMP_NAME%>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">Type of visit:</div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="visit_type">
+                            <!-- Physical Visit -->
+                            <%= data1[0].visit_type %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  text-nowrap fw_bold">Customer Name:</div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600" id="customer_name">
+                            <!-- <span>Vicky Rana</span> -->
+                            <%= data1[0].customer_name %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">Customer Address:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="customer_address">
+                            <!-- Kathitand -Ranchi -->
+                            <%= data1[0].customer_address %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  text-nowrap fw_bold">Customer Location:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600" id="customer_location">
+                            <!-- <span>Ranchi</span> -->
+                            <%= data1[0].customer_location %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">Customer Phone:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="customer_phone">
+                            <!-- 9546048816 -->
+                            <%= data1[0].customer_phone %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  text-nowrap fw_bold">Quantity Purchase:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600" id="quantity_purchage">
+                            <!-- <span>20</span> -->
+                            <%= data1[0].quantity_purchage %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">Quantity Rejected:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="quantity_rejected">
+                            <!-- 9546048816 -->
+                            <%= data1[0].quantity_rejected %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                  
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  text-nowrap fw_bold">Investigation Date :
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600" id="quantity_purchage">
+                            <!-- <span>20</span> -->
+                            <%= data1[0].formate_investigated_at %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">Person Meet :
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="quantity_rejected">
+                            <!-- 9546048816 -->
+                            <%= data1[0].person_meet %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                  
+                  <div class="container newmp2 mt-1 py-2">
+                    <div class="row">
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6  text-nowrap fw_bold">Investigation Details:
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6 teend  fw_600" id="quantity_purchage">
+                            <!-- <span>20</span> -->
+                            <%= data1[0].investigation_details %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 f_13 border-0">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-5 col-6 text-nowrap fw_bold">Action Taken :
+                          </div>
+                          <div class="col-xl-9 col-lg-7 col-6  teend fw_600" id="quantity_rejected">
+                            <!-- 9546048816 -->
+                            <%= data1[0].action_taken %>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                  <div class="container newmp2 mt-1 py-2 ">
+                    <div class="row">
+                      <div class="col-md-6 f_13 ">
+                        <div class="row">
+                          <div class="col-xl-3 col-lg-4 col-md-12  text-wrap fw_bold  text-center text-md-start pb-3 pb-lg-0 ">Investigation Images & Video:</div>
+                          <div class="col-xl-9 col-lg-8 col-md-12 teend  fw_600 ">
+
+                            <div class="row">
+                              
+                              <div class="col-md-4 col-sm-4  d-flex justify-content-center align-items-center">
+                                <div class="row">
+                                  <div class="col-12">
+
+                                    <div class="w_h_50 ">
+                                      <!-- <img src="/static/images/wp11845597-satoru-gojo-4k-wallpapers.jpg" alt="img" class="img_inlarge" height="50px" > -->
+                                      <img src="/static/images/<%= data1[0].inv_image_1%>" alt="img" class="img_inlarge w-100 h-100 " >
+                                      <% console.log(data1[0].inv_image_1,'mmmmmmmmmmmmmmmmm') %>
+                                    </div>
+                                    <div class="">Image 1</div>
+                                  
+                                  </div>
+                                </div>
+                                
+                              </div>
+
+
+
+                              <div class="col-md-4 col-sm-4  d-flex justify-content-center align-items-center">
+                                <div class="row">
+                                  <div class="col-12">
+
+                                <div class="w_h_50 ">
+                                  <img src="/static/images/<%= data1[0].inv_image_2%>" alt="img" class="img_inlarge w-100 h-100" >
+                                </div>
+                                <div class="">Image 2</div>
+                                </div>
+                              </div>
+                              </div>
+                              
+                              <div class="col-md-4 col-sm-4  d-flex justify-content-center align-items-center">
+                                <div class="row">
+                                  <div class="col-12">
+
+                                <div class="w_h_50"> 
+                                  <video  class="img_inlarge22 w-100 h-100 "  playbackRate="1" >
+                                    <source src="/static/videos/<%= data1[0].inv_video %>" type="video/mp4">
+                                    <% console.log(data1[0].video_link,'23qqqqqq111')%>
+                                    Your browser does not support the video tag.
+                                </video>
+                                  </div>
+                                <div>Video</div>
+                            </div>
+                            </div>
+                            </div>
+
+                            </div>
+
+
+                            <div class="modal fade  vh-100" id="mediaModal" tabindex="-1" aria-labelledby="mediaModalLabel" aria-hidden="true"  >
+                              <div class="modal-dialog modal-lg h-75" >
+                                <div class="modal-content  h-100" >
+
+                                  <div class="modal-header border-0">
+                                    <button type="button" class="btn-close modal_ab" data-bs-dismiss="modal" aria -label="Close"></button>
+                                  </div>
+                                  <div class="modal-body d-flex justify-content-center align-items-center h-75 px-2" id="mediaContainer">
+                                  </div>
+
+
+                                </div>
+                              </div>
+                            </div>                            
+                            
+
+
+
+
+
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+
+                  </div>
+
+
+
+
+
+
+                </div>
+
+              </div>
+
+              <!-- Status change -->
+
+              <div class="container-fluid mt-3  border_t_g newmp bg-light py-2 rounded-3" style="font-weight: 500;">
+                <div class="row mt-2  pb-3 mx-3 ">
+                  <div class="container newmp2 mt-1 py-2 ">
+                    <div class="row ">
+
+                      <div class="col-lg-6 f_13  ">
+                        <div class="row h-100">
+                          <div class="col-3  text-nowrap fw_bold  d-flex align-items-center " >Action:</div>
+                          <div class="col-9 teend  fw_600  d-flex align-items-center">
+                            <div class="btn bg_gg fw_600 f_13 text-light" id="status_chg_btn">Status Change</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6 f_13   " id="ticket_status_edit">
+                        
+                        
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="container newmp2 mt-1  invst_colum ">
+                   
+
+
+                </div>
+              </div>
+
+
+
+            </div>
+
+
+
+
+
+
+          </div>
+          
+
+
+        </div>
+
+        
+       
+
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+
+
+          <div class="container-fluid mt-4 mb-4 ">
+            <div class="container-fluid mt-3 border_t_g newmp bg-light py-2 rounded-3">
+              <ul class="timeline">
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="hexa"></span>
+                      <span class="flag f_14 fw_600">Open</span>
+                      <span class="time-wrapper"><span class="time time f_13 fw_600"><i class="fa-solid fa-clock"></i> <%= data1[0].pre_ticket_Created_on %></span></span>
+                    </div>
+                    <div class="desc f_13 fw_600">Created by: <%= data1[0].pre_tkt_raised_by %></div>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <span class="hexa"></span>
+                      <span class="flag f_14 fw_600">In-process</span>
+                      <span class="time-wrapper"><span class="time f_13 fw_600"><i class="fa-solid fa-clock"></i> 
+                        <%= data1[0].pre_tkt_inprocess_at %></span> </span>
+                    </div>
+                    <div class="desc f_13 fw_600">In-process by: <%= data1[0].pre_tkt_inprocess_by %></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="hexa"></span>
+                      <span class="flag f_14 fw_600">Resolved</span>
+                      <span class="time-wrapper"><span class="time time f_13 fw_600"><i class="fa-solid fa-clock"></i> <%= data1[0].pre_tkt_resolved_at %></span></span>
+                    </div>
+                    <div class="desc f_13 fw_600">Resolved by: <%= data1[0].pre_tkt_resolved_by %></div>
+                  </div>
+                </li>
+
+                <% if (data1[0].reopen_ticket_Created_on && data1[0].reopen_tkt_raised_by) { %>
+
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <span class="hexa"></span>
+                      <span class="flag f_14 fw_600">Reopen</span>
+                      <span class="time-wrapper"><span class="time f_13 fw_600"><i class="fa-solid fa-clock"></i>
+                         <%= data1[0].reopen_ticket_Created_on %></span> </span>
+                         <% console.log(data1[0].reopen_ticket_Created_on,'1222222222')%>
+                    </div>
+                    <div class="desc f_13 fw_600">Reopen by: <%= data1[0].reopen_tkt_raised_by %></div>
+                  </div>
+                </li>
+                <% } else { %>
+                  <li>
+                    <div class="direction-l">
+                      <div class="flag-wrapper">
+                        <span class="hexa"></span>
+                        <span class="flag f_14 fw_600">No data found</span>
+                      </div>
+                    </div>
+                  </li>
+                <% } %>
+
+                <% if (data1[0].tkt_inprocess_at && data1[0].tkt_inprocess_by) { %>
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="hexa"></span>
+                      <span class="flag f_14 fw_600">In-process</span>
+                      <span class="time-wrapper"><span class="time time f_13 fw_600"><i class="fa-solid fa-clock"></i> <%= data1[0].tkt_inprocess_at %></span></span>
+                    </div>
+                    <div class="desc f_13 fw_600">In-process by: <%=data1[0].tkt_inprocess_by %></div>
+                  </div>
+                </li>
+                <% } else { %>
+                  <li>
+                    <div class="direction-r">
+                      <div class="flag-wrapper">
+                        <span class="hexa"></span>
+                        <span class="flag f_14 fw_600">No data found</span>
+                      </div>
+                    </div>
+                  </li>
+                <% } %>
+
+                <% if (data1[0].tkt_resolved_at && data1[0].tkt_resolved_by) { %>
+                <li>
+                  <div class="direction-l">
+                    <div class="flag-wrapper">
+                      <span class="hexa"></span>
+                      <span class="flag f_14 fw_600">Resolved</span>
+                      <span class="time-wrapper"><span class="time f_13 fw_600"><i class="fa-solid fa-clock"></i> <%= data1[0].tkt_resolved_at %></span> </span>
+                    </div>
+                    <div class="desc f_13 fw_600">Resolved by:<%= data1[0].tkt_resolved_by %></div>
+                  </div>
+                </li>
+                <% } else { %>
+                  <li>
+                    <div class="direction-l">
+                      <div class="flag-wrapper">
+                        <span class="hexa"></span>
+                        <span class="flag f_14 fw_600">No data found</span>
+                      </div>
+                    </div>
+                  </li>
+                <% } %>
+
+
+                <% if (data1[0].tkt_closed_at && data1[0].tkt_closed_at) { %>
+                <li>
+                  <div class="direction-r">
+                    <div class="flag-wrapper">
+                      <span class="hexa"></span>
+                      <span class="flag f_14 fw_600">Closed</span>
+                      <span class="time-wrapper"><span class="time time f_13 fw_600"><i class="fa-solid fa-clock"></i> <%= data1[0].tkt_closed_at%></span></span>
+                    </div>
+                    <div class="desc f_13 fw_600">Closed by: <%= data1[0].tkt_closed_by%></div>
+                  </div>
+                </li>
+                <% } else { %>
+                  <li>
+                    <div class="direction-r">
+                      <div class="flag-wrapper">
+                        <span class="hexa"></span>
+                        <span class="flag f_14 fw_600">No data found</span>
+                      </div>
+                    </div>
+                  </li>
+                <% } %>
+          
+
+
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </section>
+
+      <script src="/static/js/reopen_complaint_view.js"></script>
+
+</body>
+
+</html>

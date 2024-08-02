@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS</title>
+  <link rel="icon" href="/static/images/logo2.png">
+  <link rel="stylesheet" href="/static/css/all_tickets_list.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <%- include('partials/sidebar.ejs') %>
+
+      <div class="main">
+        <%- include('partials/header.ejs') %>
+
+
+
+
+
+          <section class="page">
+            <div class="container-fluid my-2">
+                <div class="row">
+                    <div class="col-12 f_80 fw_bold">
+                        <i class="fa fa-home"></i> Dashboard / Reports / All Tickets Report
+                    </div>
+                </div>
+              </div>
+            
+                <div class="container-fluid mt-4">
+                    <div class="container-fluid mt-3 border_t_g newmp bg-light py-2 rounded-3">
+                        <div class="row my-1">
+            
+                            <div class="col-md-4 my-2">
+                                <h6 class="fw_bold f_13 ms-1">Category</h6>
+                                <select class="form-select border-leftb box_sdw11 f_13 fw_600" id="mng_btl" aria-label="Default select example">
+                                    <option value="" disabled selected>Select Category</option>
+                                    <!-- <option  value="1">Open</option>
+                                    <option  value="2">In Process</option>
+                                    <option  value="3">Resolved</option>
+                                    <option  value="4">Closed</option>
+                                    <option  value="5">Reopen</option> -->
+                                    </select>
+                            </div>
+                            <div class="col-md-4 my-2">
+                                <h6 class="fw_bold f_13 ms-1">Ticket Status :</h6>
+                                <select class="form-select border-leftb box_sdw11 f_13 fw_600" id="mng_btl" aria-label="Default select example">
+                                    <option value="" disabled selected>Select Ticket Status</option>
+                                    <option  value="1">Open</option>
+                                    <option  value="2">In Process</option>
+                                    <option  value="3">Resolved</option>
+                                    <option  value="4">Closed</option>
+                                    <option  value="5">Reopen</option>
+                                    </select>
+                            </div>
+
+                            <div class="col-sm-12 mt-3">
+                                <div class="form-group">
+                                  <label class="label-radio inline">
+                                    <input type="radio" name="encryption_type" value="mtd" checked>
+                                    <span class="custom-radio"></span>
+                                    MTD
+                                  </label>
+                                  <label class="label-radio inline">
+                                    <input type="radio" name="encryption_type" value="qtd">
+                                    <span class="custom-radio"></span>
+                                    QTD
+                                  </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 my-2 mt-3">
+                                <h6 class="fw_bold f_13 ms-1 ">Start Date :</h6>
+                                <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" id="datepicker" name="expense"
+                                placeholder="Select Start Date">
+                            </div>
+                            <div class="col-md-4 my-2 mt-3">
+                                <h6 class="fw_bold f_13 ms-1 ">End Date :</h6>
+                                <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" id="datepicker2" name="expense"
+                                placeholder="Select End Date">
+                            </div>
+                            <div class="col-md-1 d-flex align-items-end my-2">
+                                <button class="btn f_13 fw_600 px-4 bg_gg  text-light  box_sdw11">Filter</button>
+                            </div>
+            
+                        </div>
+                       
+                    </div>
+                </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                <div class="container-fluid my-3  pt-4">
+                    <div class="container-fluid mt-3 rounded-3 border_t_g newmp bg-light py-4">
+                        <div class="row mx-2">
+                            <div class="col-12 d-flex justify-content-between">
+                                <h6 class="f_16 fw_600 mt-3">Ticket Report</h6>
+                                <button class="btn bg_gg mt-2 h_35 fw_600 text-light py-1 f_13">Export</button>
+                            </div>
+<div class="col-12">
+    <hr>
+</div>
+                        </div>
+                        <div class="row mt-2 mx-2">
+            
+                            <div class=" table-responsive  px-2  h_350  me-2">
+            
+                                <table class="table table-bordered table-responsive  table-striped" id="dataTables">
+                                    <thead id="thead">
+                                        <tr>
+                                            <th>S.No.</th>
+                                            <th>Ticket Date</th>
+                                            <th>Ticket No.</th>
+                                            <th>Create By</th>
+                                            <!-- <th>SLA Time</th> -->
+                                            <th>Category</th>
+                                            <th>Last Comment</th>
+                                            <th>Closed At</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody">
+                                        <tr>
+                                            <td>1</td>
+                                            <td>2024-02-22</td>
+                                            <td>477</td>
+                                            <td>Patnala Banni Aravind</td>
+                                            
+                                            <td>Product Related</td>
+                                            <td>Technical perso...</td>
+                                            <td>2024-02-27 10:11:41</td>
+                                            <td>Closed</td>
+                                            <td>
+                                              <a href="#" class="btn bg_gg text-light" title="PDF"><i class="fa-regular fa-file"></i></a>
+                                            </td>
+                                         </tr>
+                                      
+            
+            
+            
+            
+                                    </tbody>
+                                </table>
+            
+                            </div>
+            
+            
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  </section>
+
+  <script src="/static/js/all_tickets_list.js"></script>
+
+</body>
+
+</html>

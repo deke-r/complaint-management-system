@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS</title>
+  <link rel="icon" href="/static/images/logo2.png">
+  <link rel="stylesheet" href="/static/css/complaint_mail.css">
+
+  <style>
+  .f_11{font-size: 11px;}
+  .f_12{font-size: 12px;}
+  .f_13{font-size: 13px;}
+  .f_14{font-size: 14px;}
+  .f_15{font-size: 15px;}
+  .f_16{font-size: 16px;}
+  .f_17{font-size: 17px;}
+  .f_18{font-size: 18px;}
+  
+  .fw_500{
+    font-size: 500;
+  }
+
+  .b_radius_8{
+    border-radius: 8px;
+  }
+
+
+
+  </style>
+  
+
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <%- include('partials/sidebar.ejs') %>
+
+    <div class="main">
+      <%- include('partials/header.ejs') %>
+
+
+      <div class="container-fluid  mt-3 py-0">
+        <div class="container-fluid border">
+          <div class="row mb-3  f_14 py-1 fw_600">
+            <div >Dear Shoaib,</div>
+            <div>Details of your ticket.</div>
+          </div>
+          <div class="row my-3 ms-1">
+            <div class="col-3  d-flex justify-content-start align-items-center b_radius_8 bg-info text-light">
+              <div>
+                <div class="f_18 fw-bold ">Ticket ID</div>
+                <div class="f_16 fw-bold">220</div>
+                <div class="f_13 fw_500">LOGGED ON</div>
+                <div class="f_13 fw_500">Tuesday 20th of June 2023 </div>
+                <div class="f_13 fw_500">11:01:13 AM</div>
+              </div>
+
+            </div>
+
+            <div class="col-3  ms-2 ">
+              <div class="row">
+                <div class="col-12  p-1 bg-success text-light b_radius_8 pe-4 ps-2">
+                  <div class="f_15 fw-bold d-flex justify-content-between  ">
+                    <span>Status</span>
+                    <span>Closed</span>
+                  </div>
+                  <div class="f_13 fw_500">LOGGED ON</div>
+                  <div class="f_13 fw_500 d-flex justify-content-between">
+                    <span>Tuesday 20th of June 2023</span>
+                    <span>11:01:13 AM</span>
+                  </div>
+                  <div class="f_13 fw_500"></div>
+                </div>
+
+
+                <div class="col-12  p-1 mt-1 bg-warning text-light b_radius_8 pe-4 ps-2">
+                  <div class="f_15 fw-bold d-flex justify-content-between ">
+                    <span>Closed By</span>
+                    <span>Shoaib(16009136)</span>
+                  </div>
+                  <div class="f_13 fw_500">LOGGED ON</div>
+                  <div class="f_13 fw_500 d-flex justify-content-between">
+                    <span>Tuesday 20th of June 2023</span>
+                    <span>11:01:13 AM</span>
+                  </div>
+                  <div class="f_13 fw_500"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="row my-2 ">
+            <div>
+              <span class="f_14 fw-bold">Go to ticket details :</span><a class="f_14" href=" http://cms.jacpl.in/complaint-view/220"> http://cms.jacpl.in/complaint-view/220</a>
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class="f_15 fw-bold">DESCRIPTION</div>
+            <div class="f_13">
+              Mobile number of Influencer registered in AC : 8278280345
+            </div>
+            <div class="f_13">
+              Reason for block : fack I'd Labour
+            </div>
+          </div>
+          <div class="row my-2">
+            <div class="f_15 fw-bold">SOLUTION</div>
+            <div class="f_13">FALSE</div>
+          </div>
+          <div class="row mt-5 mb-2">
+            <div class="f_15 fw-bold">Thanks & regards,</div>
+            <div class="f_15 fw_600">Smart Support </div>
+            <div class="f_11 ">
+              <i> *This is a system generated email, do not reply to this email id. </i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+  <script src="/static/js/complaint_mail.js"></script>
+</body>
+
+</html>
+
+
+

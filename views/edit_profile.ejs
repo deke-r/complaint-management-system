@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+    <link rel="icon" href="/static/images/logo2.png">
+    <link rel="stylesheet" href="/static/css/edit_profile.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('partials/sidebar.ejs') %>
+
+            <div class="main">
+                <%- include('partials/header.ejs') %>
+
+
+
+
+
+                    <section class="page">
+
+
+                        <div class="container-fluid my-2">
+                            <div class="row">
+                                <div class="col-12 f_80 fw_bold">
+                                    <i class="fa fa-home"></i> Dashboard / Edit Profile
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="container-fluid mt-4">
+                            <div class="container-fluid mt-3 border_t_g newmp bg-light py-2 rounded-3">
+                                <div class="row mx-2">
+                                    <div class="panel-heading my-2 f_16 fw_600">Edit Profile</div>
+                                    <hr>
+                                </div>
+
+
+                                <div class="row mt-2 mx-1">
+                                    <div class="col-md-4 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">Name:</h6>
+                                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            name="Name" placeholder="Name" required value="<%=emp_name %>" disabled>
+                                    </div>
+                                    <div class="col-md-4 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">Email:</h6>
+                                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            name="Email" placeholder="Email" required value="<%=emp_email %>" disabled>
+                                    </div>
+                                    <div class="col-md-4 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">Phone No.:</h6>
+                                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            name="" placeholder="Phone Number" required value="<%= mobile%>" disabled>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <div class="col-12 d-flex justify-content-end align-items-start">
+                                        <button
+                                            class="btn bg_b mt-4 text-nowrap text-light f_13 fw_600 submitExpense email"
+                                            type="sumbit" id="sub_btn">Save</button>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="container-fluid mt-4">
+                            <div class="container-fluid mt-3 border_t_g newmp bg-light py-2 rounded-3">
+                                <div class="row mx-2">
+                                    <div class="panel-heading my-2 f_16 fw_600">Change Password</div>
+                                    <hr>
+                                </div>
+
+
+                                <div class="row mt-2 mx-1">
+                                    <div class="col-md-4 my-2">
+                                        <form action="/updatePassword" method="post">
+                                            <h6 class="fw_bold f_13 ms-1">New Password:</h6>
+                                            <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" name="new_password" placeholder="New Password"
+                                                required>
+                                            </div>
+                                            <div class="col-md-4 my-2">
+                                                <h6 class="fw_bold f_13 ms-1">Confirm Password:</h6>
+                                                <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" name="confirm_password"
+                                                    placeholder="Confirm Password" required>
+                                            </div>
+                                            <div class="col-md-4 my-2 d-flex justify-content-md-start align-items-start">
+                                                <button class="btn bg_b mt-4 text-nowrap text-light f_13 fw_600 submitExpense email" type="sumbit"
+                                                    id="sub_btn">Save</button>
+                                            </div>
+                                        </form>
+                                </div>
+                                    
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                    </section>
+
+</body>
+
+</html>

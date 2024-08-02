@@ -1,0 +1,83 @@
+
+@media only screen and (max-width: 600px) {
+    .main_div{
+        background-image: url('/static/images/bg_mobile_22.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .main_div{
+        background-image: url('/static/images/bg_mobile_22.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .main_div{
+        /* background-color:url(https://i.ibb.co/tDLqQtj/bg.jpg); */
+        /* background-image: url('https://i.ibb.co/tDLqQtj/bg.jpg'); */
+        background-image: url('/static/images/bg_22.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .main_div{
+        /* background-color:url(https://i.ibb.co/tDLqQtj/bg.jpg); */
+        /* background-image: url('https://i.ibb.co/tDLqQtj/bg.jpg'); */
+        background-image: url('/static/images/bg_22.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+}
+
+.fs_25{
+    font-size: 25px;
+}
+
+.fs_13{
+    font-size: 13px;
+}
+
+.fs_12{
+    font-size: 12px;
+}
+
+
+.vtl_middle{
+    vertical-align: middle !important;
+}
+
+.login_btn{
+    background-color: #344b9b;
+    /* background: linear-gradient(45deg, #8D334C, #CF6964); */
+    border-radius: 30px !important;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: transparent;
+    font-weight: bold;
+}
+
+.border_bottom{
+    border-bottom: 3px solid white;
+}
+.main_cont{
+    height: 100vh;
+}
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+    <link rel="icon" href="/static/images/logo2.png">
+    <link rel="stylesheet" href="/static/css/sla_tat_config.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('partials/sidebar.ejs') %>
+
+            <div class="main">
+                <%- include('partials/header.ejs') %>
+
+                    <section class="page">
+                        <div class="container-fluid my-2">
+                            <div class="row">
+                                <div class="col-12 f_80 fw_bold">
+                                    <i class="fa fa-home"></i> Dashboard / SLA & TAT Configuration Lists
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="container-fluid my-3  pt-4">
+                            <div class="container-fluid mt-3 rounded-3 border_t_g newmp bg-light py-4">
+                                <div class="row mx-2">
+                                    <div class="col-12">
+                                        <h6 class="f_16 fw_600">SLA & TAT Configuration Lists</h6>
+                                        <hr class="mt-0">
+                                    </div>
+                                </div>
+                                <div class="row mt-2 mx-2">
+                                    <div class=" table-responsive  px-2  h_350  me-2">
+                                        <table class="table table-bordered table-responsive  table-striped"
+                                            id="dataTables">
+                                            <thead id="thead">
+                                                <tr>
+                                                    <th>S.No.</th>
+                                                    <th>Complaint Category</th>
+                                                    <th>Ticket Category</th>
+                                                    <th>Ticket Type</th>
+                                                    <th>1st Level TAT</th>
+                                                    <th>1st Level SLA</th>
+                                                    <th>2nd Level TAT</th>
+                                                    <th>2nd Level SLA</th>
+                                                    <th>3rd Level TAT</th>
+                                                    <th>3rd Level SLA</th>
+                                                    <th>Created At</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <% for (var v=0; v < data.length; v++) { %>
+                                            <tbody id="tbody">
+                                                <tr class="text-secondary">
+                                                    <td><%= v+1 %></td>
+                                                    <td><%= data[v].c_category %></td>
+                                                    <td><%= data[v].ticket_category %></td>
+                                                    <td><%= data[v].ticket_type %></td>
+                                                    <td><%= data[v]['1st_Level_TAT'] %></td>
+                                                    <td><%= data[v]['1st_Level_SLA'] %></td>
+                                                    <td><%= data[v]['2nd_Level_TAT'] %></td>
+                                                    <td><%= data[v]['2nd_Level_SLA'] %></td>
+                                                    <td><%= data[v]['3rd_Level_TAT'] %></td>
+                                                    <td><%= data[v]['3rd_Level_SLA'] %></td>
+                                                    <td><%= data[v].created_at %></td>
+                                                    <td>
+                                                        <a class='btn bg_gg f_13 text-light fw_600' href="/sla_tat_config_edit/<%= data[v].id%>">
+                                                            <i class="fa fa-edit fa-lg"></i>
+                                                        </a>
+                                                      
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                            <% } %>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </section>
+
+                    <script src="/static/js/sla_tat_config.js"></script>
+
+</body>
+
+</html>

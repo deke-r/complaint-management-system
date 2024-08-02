@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid header bg_sb h_50 header-d ">
+            <div class="row  h_50">
+                <div class="col-12 d-flex justify-content-end align-items-center px-0">
+                    <div class="session_name  text-light fw_600  me-md-3  ">
+                        <span class="f_16 "><%= emp %> - <%- emp_name %> ( <%= role %> )  </span>
+                     </div>
+
+                     <div class="position-relative me-2 ">
+                      <i class="fa-solid fa-bell f_20 text-light mx-2 "></i><span class="no-symbol">2</span>
+                     </div>
+
+                    <div class="log-out-btn mx-2 text-nowrap ">
+
+                        <a href="#" class=" nav-link fw_600  text-light " title="log-out?" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        <i class="fa-solid fa-right-from-bracket" ></i>
+                        &nbsp;
+                      </a>
+
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content " style="z-index: 30000 !important;">
+                            <div class="modal-header text-dark">
+                              <h6>Logout <i class="fa fa-lock"></i></h6>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-dark fw_600">
+                              <i class="fa fa-question-circle"></i> Are you sure you want to
+                              log-out?
+                            </div>
+                            <div class="modal-footer">
+
+                              <button type="button"
+                                class="btn bg_r text-light f_13 fw_600 box_sdw11"
+                                id="logout">Logout</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+
+
+    </div>
+    <script src="/static/js/sidebar.js"></script>
+
+
+</body>
+
+</html>

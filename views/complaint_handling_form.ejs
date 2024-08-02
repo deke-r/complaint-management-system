@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+    <link rel="icon" href="/static/images/logo2.png">
+    <link rel="stylesheet" href="/static/css/complaint_handling_form.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('partials/sidebar.ejs') %>
+
+            <div class="main">
+                <%- include('partials/header.ejs') %>
+
+
+
+
+
+                    <section class="page">
+
+                        <div class="container-fluid my-2">
+                            <div class="row">
+                                <div class="col-12 f_80 fw_bold">
+                                    <i class="fa fa-home"></i> Dashboard / Complaint Handling Form  
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container-fluid mt-4">
+                            <div class="container-fluid mt-3 border_t_g newmp bg-light py-2 rounded-3">
+
+                                <div class="row mt-2 mb-2 pb-4">
+                                    <div class="col-md-4 my_cols">
+                                        <h6 class="fw_bold f_13 ms-1">Complaint No.:</h6>
+                                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" id="dealername"
+                                            placeholder="Complaint No" name="Complaint_nos" required>
+                
+                
+                                    </div>
+                                    <div class="col-md-4 my_cols">
+                                        <h6 class="fw_bold f_13 ms-1">Mobile No.(Dealer):</h6>
+                                        <input type="number" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            placeholder="Dealer Mobile No." name="mobilenumber" id="dd_mobilenumber" required>
+                                        <h6 class="f_11 fw_bold ms-1 mt-1 displaynun">&nbsp;</h6>
+                
+                                    </div>
+                                    <div class="col-md-4 my_cols">
+                                        <h6 class="fw_bold f_13 ms-1">City/ Town:</h6>
+                                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            placeholder="Enter City/Town" name="city" id="dd_city" required>
+                
+                                    </div>
+                                </div>
+
+
+
+                               
+
+                            </div>
+                        </div>
+
+
+                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </section>
+
+
+
+
+
+
+
+                    <script src="/static/js/complaint_handling_form.js"></script>
+</body>
+
+</html>

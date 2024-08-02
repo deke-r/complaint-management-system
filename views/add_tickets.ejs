@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+    <link rel="icon" href="/static/images/logo2.png">
+    <link rel="stylesheet" href="/static/css/add_tickets.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('partials/sidebar.ejs') %>
+
+            <div class="main">
+                <%- include('partials/header.ejs') %>
+
+
+
+
+
+                    <section class="page">
+
+                        <div class="container-fluid my-2">
+                            <div class="row">
+                                <div class="col-12 f_80 fw_bold">
+                                    <i class="fa fa-home"></i> Dashboard / Tickets / Add Tickets
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container-fluid mt-4">
+                            <div class="container-fluid mt-3 border_t_g newmp bg-light py-2 rounded-3">
+                                <form action="" method="POST" enctype="multipart/form-data">
+                                    <div class="row mt-4 mb-2 pb-4">
+                                        <div class="col-lg-3 my_cols">
+                                            <h6 class="fw_bold f_13 ms-1 ">Complaint Category: <span class="text-danger">*</span></h6>
+                                            <select name="vertical"
+                                                class="form-select border-leftb box_sdw11 f_13 fw_600" id="yourSelectId"
+                                                aria-label="Default select example">
+                                                <option selected disabled>Select</option>
+                                                <% for (var i=0; i < data.length; i++) { %>
+                                                    <option value="<%= data[i].c_category %>">
+                                                        <%= data[i].c_category %>
+                                                    </option>
+                                                    <% } %>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-lg-3 my_cols">
+                                            <h6 class="fw_bold f_13 ms-1 ">Complaint Sub. Category: <span class="text-danger">*</span></h6>
+                                            <select name="vertical"
+                                                class="form-select border-leftb box_sdw11 f_13 fw_600" id="ticket_type_dd"
+                                                aria-label="Default select example">
+                                                <option selected disabled>Select</option>
+                                               
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3 my_cols">
+                                            <h6 class="fw_bold f_13 ms-1 ">Complaint Type: <span class="text-danger">*</span></h6>
+                                            <select name=""
+                                                class="form-select border-leftb box_sdw11 f_13 fw_600"
+                                                id="ticket_type1_dd" aria-label="Default select example">
+                                                <option selected disabled>Select</option>
+                                            </select>
+
+
+                                        </div>
+
+                                        <div class="col-lg-3 my_cols">
+                                            <h6 class="fw_bold f_13 ms-1 ">Ticket Location:<span class="text-danger">*</span></h6>
+                                            <select name=""
+                                                class="form-select border-leftb box_sdw11 f_13 fw_600"
+                                                id="ticket_location" aria-label="Default select example">
+                                                <option selected disabled>Select</option>
+                                            </select>
+
+
+                                        </div>
+
+
+                                    </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="container-fluid parentbox my-4" id="append_cr">
+                            
+                        </div>
+
+                    </section>
+
+</div   >
+</div>
+
+
+
+
+
+                    <script src="/static/js/complaint_form.js"></script>
+</body>
+
+</html>

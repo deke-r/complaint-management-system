@@ -1,0 +1,25 @@
+@media (max-width:768px) {
+    .my_cols{
+     margin-top: .5rem !important;
+     margin-bottom: .5rem !important;
+    }
+    .displaynun{
+        display: none !important;
+    }
+}
+
+
+.bg_b2{background-color: #0473cf;}
+
+
+.panel.panel-default .panel-heading {
+    
+    color: #777 !important;
+    border-color: #f1f5fc !important;
+}
+
+.panel-heading{
+    font-weight: bold; font-size: 15px !important; 
+    
+}
+

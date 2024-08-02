@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS</title>
+  <link rel="icon" href="/static/images/logo2.png">
+  <link rel="stylesheet" href="/static/css/dashboard.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <%- include('partials/sidebar.ejs') %>
+
+      <div class="main">
+        <%- include('partials/header.ejs') %>
+
+
+
+
+
+          <section class="page">
+            <div class="container-fluid my-2">
+              <div class="row">
+                <div class="col-12 f_80 fw_bold">
+                  <i class="fa fa-home"></i> Home / Dashboard
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+            <div class="container-fluid">
+              <div class="row">
+
+                <div class="col-sm-6 col-md-6 col-lg-3" id="open_ticket_view">
+                  <div class="panel-stat3 bg-danger">
+                    <h2 class="m-top-none" id="open_count"><%= productIssues.openCount %></h2>
+                    <h5>Open Tickets </h5>
+                    <div class="stat-icon">
+                      <i class="fa fa-tags fa-3x "></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="panel-stat3 bg-warning">
+                    <h2 class="m-top-none" id="in_process_count"><%= productIssues.inProcessCount %></h2>
+                    <h5>In-Process Tickets</h5>
+                    <div class="stat-icon">
+                      <i class="fa fa-tags fa-3x"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="panel-stat3 bg-info">
+                    <h2 class="m-top-none" id="resolved_count"><%= productIssues.resolvedCount %></h2>
+                    <h5>Resolved Tickets </h5>
+                    <div class="stat-icon">
+                      <i class="fa fa-tags fa-3x"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="panel-stat3 bg-success">
+                    <h2 class="m-top-none" id="closed_count"><%= productIssues.closedCount %></h2>
+                    <h5>Closed Tickets</h5>
+                    <div class="stat-icon">
+                      <i class="fa fa-tags fa-3x"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <hr>
+                
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="panel-stat3 bg-secondary ">
+                    <h2 class="m-top-none" id="reopen_count"><%= userComplaints.reopenCount %></h2>
+                    <h5>Reopen Tickets</h5>
+                    <div class="stat-icon ">
+                      <i class="fa fa-tags fa-3x" ></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="panel-stat3 bg-warning">
+                    <h2 class="m-top-none" id="in_process_count"><%= userComplaints.inProcessCount %></h2>
+                    <h5>In-Process Tickets</h5>
+                    <div class="stat-icon">
+                      <i class="fa fa-tags fa-3x"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="panel-stat3 bg-info">
+                    <h2 class="m-top-none" id="resolved_count"><%= userComplaints.resolvedCount %></h2>
+                    <h5>Resolved Tickets </h5>
+                    <div class="stat-icon">
+                      <i class="fa fa-tags fa-3x"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                  <div class="panel-stat3 bg-success">
+                    <h2 class="m-top-none" id="closed_count"><%= userComplaints.closedCount %></h2>
+                    <h5>Closed Tickets</h5>
+                    <div class="stat-icon">
+                      <i class="fa fa-tags fa-3x"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+  </section>
+
+      </div>
+  </div>
+
+
+  <script src="/static/js/dashboard.js"></script>
+</body>
+
+</html>

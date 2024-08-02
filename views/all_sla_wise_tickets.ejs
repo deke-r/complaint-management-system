@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+    <link rel="icon" href="/static/images/logo2.png">
+    <link rel="stylesheet" href="/static/css/all_transfer_tickets.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('partials/sidebar.ejs') %>
+
+            <div class="main">
+                <%- include('partials/header.ejs') %>
+
+
+                <section class="page">
+                    <div class="container-fluid my-2">
+                        <div class="row">
+                            <div class="col-12 f_80 fw_bold">
+                                <i class="fa fa-home"></i> Dashboard / Reports / All SLA Wise Ticket Report
+                            </div>
+                        </div>
+                      </div>
+                    
+                        <div class="container-fluid mt-4">
+                            <div class="container-fluid mt-3 border_t_g newmp bg-light py-2 rounded-3">
+                                <div class="row my-1">
+                    
+                                    <div class="col-md-3 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">SLA Day(s):</h6>
+                                        <select class="form-select    border-leftb box_sdw11 f_13 fw_600" id="mng_btl" aria-label="Default select example">
+                                            <option value="">Select SLA Day(s)</option>
+                                            <option value="1" >1</option>
+                                        <option value="2" >2</option>
+                                        <option value="3" >3</option>
+                                        <option value="4" >4</option>
+                                        <option value="5" >5</option>
+                                        <option value="6" >6</option>
+                                        <option value="7" >7</option>
+                                        <option value="8" >8</option>
+                                        <option value="9" >9</option>
+                                        <option value="10" >10</option>
+                                        <option value="11" >11</option>
+                                        <option value="12" >12</option>
+                                        <option value="13" >13</option>
+                                        <option value="14" >14</option>
+                                        <option value="15" >15</option>
+                                        <option value="16" >16</option>
+                                        <option value="17" >17</option>
+                                        <option value="18" >18</option>
+                                        <option value="19" >19</option>
+                                        <option value="20" >20</option>
+                                        <option value="21" >21</option>
+                                        <option value="22" >22</option>
+                                        <option value="23" >23</option>
+                                        <option value="24" >24</option>
+                                        <option value="25" >25</option>
+                                        <option value="26" >26</option>
+                                        <option value="27" >27</option>
+                                        <option value="28" >28</option>
+                                        <option value="29" >29</option>
+                                        <option value="30" >30</option>
+                                        <option value="31" >31</option>
+                                            </select>
+                                    </div>
+                                    <div class="col-md-3 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">SLA Hour(s) :</h6>
+                                        <select class="form-select border-leftb box_sdw11 f_13 fw_600" id="mng_btl" aria-label="Default select example">
+                                            <option value="">Select SLA Hour(s)</option>
+
+                                            <option value="1" >1</option>
+                                            <option value="2" >2</option>
+                                            <option value="3" >3</option>
+                                            <option value="4" >4</option>
+                                            <option value="5" >5</option>
+                                            <option value="6" >6</option>
+                                            <option value="7" >7</option>
+                                            <option value="8" >8</option>
+                                            <option value="9" >9</option>
+                                            <option value="10" >10</option>
+                                            <option value="11" >11</option>
+                                            <option value="12" >12</option>
+                                            <option value="13" >13</option>
+                                            <option value="14" >14</option>
+                                            <option value="15" >15</option>
+                                            <option value="16" >16</option>
+                                            <option value="17" >17</option>
+                                            <option value="18" >18</option>
+                                            <option value="19" >19</option>
+                                            <option value="20" >20</option>
+                                            <option value="21" >21</option>
+                                            <option value="22" >22</option>
+                                            <option value="23" >23</option>
+                                            </select>
+                                    </div>
+                                    <div class="col-md-3 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">SLA Min(s) :</h6>
+                                        <select class="form-select    border-leftb box_sdw11 f_13 fw_600" id="mng_btl" aria-label="Default select example">
+                                            <option value="">Select SLA Min(s)</option>
+
+                                            <option value="0" >0</option>
+                                        <option value="1" >1</option>
+                                        <option value="2" >2</option>
+                                        <option value="3" >3</option>
+                                        <option value="4" >4</option>
+                                        <option value="5" >5</option>
+                                        <option value="6" >6</option>
+                                        <option value="7" >7</option>
+                                        <option value="8" >8</option>
+                                        <option value="9" >9</option>
+                                        <option value="10" >10</option>
+                                        <option value="11" >11</option>
+                                        <option value="12" >12</option>
+                                        <option value="13" >13</option>
+                                        <option value="14" >14</option>
+                                        <option value="15" >15</option>
+                                        <option value="16" >16</option>
+                                        <option value="17" >17</option>
+                                        <option value="18" >18</option>
+                                        <option value="19" >19</option>
+                                        <option value="20" >20</option>
+                                        <option value="21" >21</option>
+                                        <option value="22" >22</option>
+                                        <option value="23" >23</option>
+                                        <option value="24" >24</option>
+                                        <option value="25" >25</option>
+                                        <option value="26" >26</option>
+                                        <option value="27" >27</option>
+                                        <option value="28" >28</option>
+                                        <option value="29" >29</option>
+                                        <option value="30" >30</option>
+                                        <option value="31" >31</option>
+                                        <option value="32" >32</option>
+                                        <option value="33" >33</option>
+                                        <option value="34" >34</option>
+                                        <option value="35" >35</option>
+                                        <option value="36" >36</option>
+                                        <option value="37" >37</option>
+                                        <option value="38" >38</option>
+                                        <option value="39" >39</option>
+                                        <option value="40" >40</option>
+                                        <option value="41" >41</option>
+                                        <option value="42" >42</option>
+                                        <option value="43" >43</option>
+                                        <option value="44" >44</option>
+                                        <option value="45" >45</option>
+                                        <option value="46" >46</option>
+                                        <option value="47" >47</option>
+                                        <option value="48" >48</option>
+                                        <option value="49" >49</option>
+                                        <option value="50" >50</option>
+                                        <option value="51" >51</option>
+                                        <option value="52" >52</option>
+                                        <option value="53" >53</option>
+                                        <option value="54" >54</option>
+                                        <option value="55" >55</option>
+                                        <option value="56" >56</option>
+                                        <option value="57" >57</option>
+                                        <option value="58" >58</option>
+                                        <option value="59" >59</option>
+                                            </select>
+                                    </div>
+        
+                                    <div class="col-md-1 d-flex align-items-end my-2">
+                                        <button class="btn f_13 fw_600 px-4 bg_gg  text-light  box_sdw11">Filter</button>
+                                    </div>
+                    
+                                </div>
+                               
+                            </div>
+                        </div>
+                    
+                    
+                        <div class="container-fluid my-3  pt-4">
+                            <div class="container-fluid mt-3 rounded-3 border_t_g newmp bg-light py-4">
+                                <div class="row mx-2">
+                                    <div class="col-6">
+                                        <h6 class="f_16 fw_600">SLA Wise Ticket Report</h6>
+                                        <hr class="mt-0">
+                                    </div>
+                                    <div class="col-6 f_10 d-flex justify-content-end">
+                                        <button class="btn btn-success f_13">Export</button>
+                                        <hr class="mt-0">
+                                    </div>
+                                </div>
+                                <div class="row mt-2 mx-2">
+                    
+                                    <div class=" table-responsive  px-2  h_350  me-2">
+                    
+                                        <table class="table table-bordered table-responsive  table-striped" id="dataTables">
+                                            <thead id="thead">
+                                                <tr>
+                                                    <th>S.NO.</th>
+                                                    <th>Grievance Date</th>
+                                                    <th>Grievance No.</th>
+                                                    <th>Create By</th>
+                                                    <th>SLA Time</th>
+                                                    <th>Category</th>
+                                                    <th>Last Comment</th>
+                                                    <th>Escalated</th>
+                                                    <th>Overdue time</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody">
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2024-02-22</td>
+                                                    <td>477</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>Patnala Banni Aravind</td>
+                                                    
+                                                    <td>Product Related</td>
+                                                    <td>Technical perso...</td>
+                                                    <td>2024-02-27 10:11:41</td>
+                                                    <td>Closed</td>
+                                                    <td>
+                                                      <a href="http://cms.jacpl.in/ticket/index/477" class="btn btn-success" title="PDF"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>
+                                                    </td>
+                                                 </tr>
+                                              
+                    
+                    
+                    
+                    
+                                            </tbody>
+                                        </table>
+                    
+                                    </div>
+                    
+                    
+                                </div>
+                            </div>
+                        </div>
+        
+        
+        
+        
+          </section>
+        
+
+
+
+
+
+                    <script src="/static/js/all_transfer_tickets.js"></script>
+
+</body>
+
+</html>

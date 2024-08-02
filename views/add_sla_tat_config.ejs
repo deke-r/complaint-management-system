@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+    <link rel="icon" href="/static/images/logo2.png">
+    <link rel="stylesheet" href="/static/css/add_sla_tat_config.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <%- include('partials/sidebar.ejs') %>
+
+            <div class="main">
+                <%- include('partials/header.ejs') %>
+
+
+
+
+
+                    <section class="page">
+
+
+
+
+                        <div class="container-fluid my-2">
+                            <div class="row">
+                                <div class="col-12 f_80 fw_bold">
+                                    <i class="fa fa-home"></i> Dashboard / SLA & TAT Configuration Lists / Add SLA & TAT Configuration
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="container-fluid my-3  pt-4">
+                            <div class="container-fluid mt-3 rounded-3 border_t_g newmp bg-light py-4">
+                                <div class="row mx-2">
+                                    <div class="col-12">
+                                        <h6 class="f_16 fw_600">Add SLA & TAT Configuration</h6>
+                                        <hr class="mt-0">
+                                    </div>
+                                </div>
+                                <div class="row mt-2 mx-2">
+
+
+                                    <div class="col-md-4 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">Complaint Category:<span class="text-danger">*</span>
+                                        </h6>
+                                        <select class="form-select border-leftb box_sdw11 f_13 fw_600 onchange" id="c_catgy"
+                                        aria-label="Default select example" name="Meeting" required>
+                                        <option selected disabled>Select Complaint Category</option>
+                                        <% for(let i=0; i<c_catgyData.length; i++){%>    
+                                        <option value="<%= c_catgyData[i].c_category %>"><%= c_catgyData[i].c_category %></option>
+                                        <%}%> 
+            
+                                    </select>
+                                    </div>
+                                    <div class="col-md-4 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">Ticket Category:</h6>
+                                        <select class="form-select border-leftb box_sdw11 f_13 fw_600 onchange" id="ticket_catgy"
+                                        aria-label="Default select example" name="Meeting" required>
+                                        <option selected disabled>Select Ticket Category</option>
+                                         
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">Ticket Type:</h6>
+                                        <select class="form-select border-leftb box_sdw11 f_13 fw_600 onchange" id="ticket_type"
+                                        aria-label="Default select example" name="Meeting" required>
+                                        <option selected disabled>Select Ticket Type</option>
+                                        
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="row mt-2 mx-2">
+                                    <div class="col-12 f_13 fw_600">
+                                        1st Level Escalation:
+                                    </div>
+
+
+                                    <div class="col-md-6 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">TAT ( value in hour(s) ):</h6>
+                                        <input type="number" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            name="Email" placeholder="" id="level_1st_tat" required>
+                                    </div>
+                                    <div class="col-md-6 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">SLA ( value in % ):</h6>
+                                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            name="" placeholder="" id="level_1st_sla" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="row mt-2 mx-2">
+                                    <div class="col-12 f_13 fw_600">
+                                        2nd Level Escalation:
+                                    </div>
+
+
+                                    <div class="col-md-6 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">TAT ( value in hour(s) ):</h6>
+                                        <input type="number" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            name="Email" placeholder="" id="level_2nd_tat" required>
+                                    </div>
+                                    <div class="col-md-6 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">SLA ( value in % ):</h6>
+                                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            name="" placeholder="" id="level_2nd_sla" required>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="row mt-2 mx-2">
+                                    <div class="col-12 f_13 fw_600">
+                                        3rd Level Escalation:
+                                    </div>
+
+
+                                    <div class="col-md-6 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">TAT ( value in hour(s) ):</h6>
+                                        <input type="number" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            name="Email" placeholder="" id="level_3rd_tat" required>
+                                    </div>
+                                    <div class="col-md-6 my-2">
+                                        <h6 class="fw_bold f_13 ms-1">SLA ( value in % ):</h6>
+                                        <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600"
+                                            name="" placeholder="" id="level_3rd_sla" required>
+                                    </div>
+
+                                </div>
+
+                                <div class="row mt-2 mx-2">
+                                    <div class="col-12 d-flex justify-content-end">
+                                        <div class="btn bg_gg fw_600 f_13 text-light" id="submit_btn">Submit</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </section>
+
+                    <script src="/static/js/add_sla_tat_config.js"></script>
+
+</body>
+
+</html>

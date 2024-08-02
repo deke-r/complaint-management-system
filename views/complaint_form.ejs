@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS</title>
+  <link rel="icon" href="/static/images/logo2.png">
+  <link rel="stylesheet" href="/static/css/complaint_form.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <%- include('partials/sidebar.ejs') %>
+
+      <div class="main">
+        <%- include('partials/header.ejs') %>
+
+
+
+
+
+          <section class="page">
+
+
+
+
+            <div class="container-fluid parentbox  my-4">
+                <div class="container-fluid bg_dot box_sdw border-t pb-4 childbox bg-light">
+                    <div class="row bg_r border-t">
+                        <h5 class="text-light text-center f_16 mt-2">Complaint Form</h5>
+                    </div>
+                    <div class="row">
+                        <!-- <p class="pb-0 mb-0 my-2 f_12  fw_600">Enter details of SGA meet done.</p> -->
+                    </div>
+            
+            
+                <div class="container-fluid parentbox my-4">
+                    <div class="container-fluid newmp  border-t childbox bg-light">
+                        <div class="row bg_b border-t">
+                            <h5 class="text-light text-center f_14 mt-2">Event Details</h5>
+                        </div>
+            
+                      
+            
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <div class="row mt-4 mb-2 pb-4">
+            
+                                <div class="col-md-6 my_cols">
+                                    <h6 class="fw_bold f_13 ms-1 ">Ticket Category:</h6>
+                                    <select name="vertical" class="form-select border-leftb box_sdw11 f_13 fw_600" id="yourSelectId"
+                                        aria-label="Default select example">
+                                            <option selected disabled>Select</option>
+                                            <% for (var i = 0; i < data.length; i++) { %>
+                                                    <option value="<%= data[i].c_category %>"><%= data[i].c_category %></option>
+                                            <% } %>                                        
+                                    </select>
+                                </div>
+                                <div class="col-md-6 my_cols">
+                                    <h6 class="fw_bold f_13 ms-1 ">Ticket Type:</h6>
+                                    <select name="vertical" class="form-select border-leftb box_sdw11 f_13 fw_600" id="ticket_type_dd"
+                                    aria-label="Default select example">
+                                    <option selected disabled>Select</option>                                   
+                                </select>
+
+            
+                                </div>
+                               
+                                
+                            </div>
+            
+                        </div>
+                </div>
+
+
+                <div class="container-fluid parentbox my-4">
+                    <div class="container-fluid newmp  border-t childbox bg-light" id="append_cr">
+                        <!-- <div class="row bg_b border-t">
+                            <h5 class="text-light text-center f_14 mt-2">Event Details</h5>
+                        </div> -->
+            
+                      
+            
+
+            
+                        </div>
+                </div>
+
+
+
+                
+            
+            
+                
+            
+            
+            
+                
+            
+            
+               
+            
+            
+            
+                            
+            
+                           
+            
+            
+                </div>
+            </div>
+
+
+            
+  </section>
+
+
+
+
+
+
+
+  <script src="/static/js/complaint_form.js"></script>
+</body>
+
+</html>

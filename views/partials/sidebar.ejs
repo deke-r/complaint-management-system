@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS</title>
+    <link rel="icon" href="/static/images/cmsfavicon.jpg">
+    <link href="/static/cdn/css/fontawesome6.5.1.css" rel="stylesheet" />
+    <link href="/static/cdn/css/bootstrap5.3.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/sidebar.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/cdn/css/jqueryUI1.12.1.css">
+    <link rel="stylesheet" href="/static/cdn/css/jquery_calender.css">
+</head>
+
+<body>
+    <% console.log(role,'role_Dddddddddddd')%>
+        <aside id="sidebar" class="sidebar">
+            <div class="d-flex">
+                <button class="toggle-btn text-light f_30" type="button">
+                    ≡                                 </button>
+                <div class="sidebar-logo">
+                    <% if( role==='MANAGER' ){ %>
+                    <a href="/manager_dashboard">CMS</a>
+
+                    <%}else if( role==='EMPLOYEE' ){ %>
+                        <a href="/employee_dashboard">CMS</a>
+
+                    <%}else if( role==='QUILITY TEAM' ){ %>
+                        <a href="/quality_team_dashboard">CMS</a>
+
+                    <%}else if( role==='BUSINESS HEAD' ){ %>
+                        <a href="/business_head_dashboard">CMS</a>
+                    
+                    <%}else if( role==='SUPER_AMIN' ){ %>
+                    <a href="/dashboard">CMS</a>
+                    <%}%>
+                </div>
+            </div>
+
+            
+            <ul class="sidebar-nav">
+                <% if( role==='MANAGER' ){ %>
+                <li class="sidebar-item">
+                    <a href="/manager_dashboard" class="sidebar-link text-light">
+                        <i class="fa-solid fa-house"></i>
+                                                <span>Dashboard</span>
+                    </a>
+                </li>
+                <%} else if( role==='EMPLOYEE' ){%>
+                    <li class="sidebar-item">
+                        <a href="/employee_dashboard" class="sidebar-link text-light">
+                            <i class="fa-solid fa-house"></i>
+                                                    <span>Dashboard</span>
+                        </a>
+                    </li>                
+
+                <%} else if( role==='QUILITY TEAM' ){%>
+                    <li class="sidebar-item">
+                        <a href="/quality_team_dashboard" class="sidebar-link text-light">
+                            <i class="fa-solid fa-house"></i>
+                                                    <span>Dashboard</span>
+                        </a>
+                    </li>
+                
+                <%} else if( role==='BUSINESS HEAD' ){%>
+                    <li class="sidebar-item">
+                        <a href="/business_head_dashboard" class="sidebar-link text-light">
+                            <i class="fa-solid fa-house"></i>
+                                                    <span>Dashboard</span>
+                        </a>
+                    </li>
+                
+                <%} else if( role==='SUPER_ADMIN' ){%>
+                    <li class="sidebar-item">
+                        <a href="/dashboard" class="sidebar-link text-light">
+                            <i class="fa-solid fa-house"></i>
+                                                    <span>Dashboard</span>
+                        </a>
+                    </li>
+                <%}%>
+                
+                <li class="sidebar-item">
+                    <a href="/edit_profile" class="sidebar-link">
+                        <i class="fa-solid fa-user"></i>
+                                                <span>Edit Profile</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>Ticket</span>
+                    </a>
+                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                       
+                        <!-- Employee & Manager -->                        
+                       <% if( role === "EMPLOYEE" || role === "MANAGER" || role === "SUPER_ADMIN" ) {%>
+                        <li class="sidebar-item">
+                            <a href="/all_tickets" class="sidebar-link">
+                                <i class="fa-solid fa-check-double"></i>
+                                View Ticket</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/reopen_tickets" class="sidebar-link">
+                                <i class="fa-solid fa-check-double"></i>
+                                Reopen Ticket</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/add_tickets" class="sidebar-link">
+                                <i class="fa-solid fa-plus"></i>
+                                Add Ticket</a>
+                        </li>
+                        <% } %>
+
+
+                        <% if( role === "QUILITY TEAM" || role === "BUSINESS HEAD" ) {%>
+                            <li class="sidebar-item">
+                                <a href="/all_tickets" class="sidebar-link">
+                                    <i class="fa-solid fa-check-double"></i>
+                                    View Ticket</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="/reopen_tickets" class="sidebar-link">
+                                    <i class="fa-solid fa-check-double"></i>
+                                    Reopen Ticket</a>
+                            </li>
+                            
+                            <% } %>
+
+
+
+                    </ul>
+                </li>
+                <!-- <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#auth2" aria-expanded="false" aria-controls="auth">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Reports</span>
+                    </a>
+                    <ul id="auth2" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="/all_ticket_list" class="sidebar-link">
+                                <i class="fa-solid fa-check-double"></i>
+                                All Ticket Report</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/all_transfer_tickets" class="sidebar-link">
+                                <i class="fa-solid fa-money-bill-transfer"></i>
+                                Transfer Tickets Report</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/all_sla_wise_tickets" class="sidebar-link">
+                                <i class="fa-solid fa-file"></i>
+                                SLA Wise Report</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">
+                                <i class="fa-solid fa-file"></i>
+                                User Login Report</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">
+                                <i class="fa-solid fa-file"></i>
+                                Summary Report</a>
+                        </li>
+                    </ul>
+                </li> -->
+                <!-- <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
+                        <i class="fa-solid fa-bars-progress"></i>
+                        <span>Master Management</span>
+                    </a>
+                    <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
+                                Category & SubCategory
+                            </a>
+                            <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">All Category & SubCategory</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Add Category & SubCategory</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#multi-twool" aria-expanded="false" aria-controls="multi-two">
+                                <i class="fa-solid fa-square-poll-horizontal"></i>
+                                Zone
+                            </a>
+                            <ul id="multi-twool" class="sidebar-dropdown list-unstyled collapse">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">All Zones</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#multi-twoo2" aria-expanded="false" aria-controls="multi-two">
+                                Users
+                            </a>
+                            <ul id="multi-twoo2" class="sidebar-dropdown list-unstyled collapse">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">All Users</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">
+                                <i class="lni lni-popup"></i>
+                                <span>Issue Management</span>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                </li> -->
+                
+                
+                <li class="sidebar-item">
+                    <% if( role === "QUILITY TEAM" || role === "SUPER_ADMIN"){ %>
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#auth3" aria-expanded="false" aria-controls="auth">
+                        <i class="fa-solid fa-ticket"></i>
+                        <span>SLA & TAT Configuration</span>
+                    </a>
+                    
+                    <ul id="auth3" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                                            
+                        <li class="sidebar-item">
+                            <a href="/sla_tat_config" class="sidebar-link">View SLA & TAT Configuration</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/add_sla_tat_config" class="sidebar-link">Add SLA & TAT Configuration</a>
+                        </li>
+
+                    </ul>
+                    <% } %>
+                </li>
+                
+
+
+                <!-- <li class="sidebar-item">
+                    <a href="/complaint_resolution" class="sidebar-link">
+                        <i class="fa-solid fa-user"></i>
+                                                <span>Complaint Resolution</span>
+                    </a>
+                </li> -->
+               
+
+                <!-- <li class="sidebar-item">
+                    <a class="sidebar-link"  id="support_link" target="_blank" data-target="#user_pass" aria-expanded="true" aria-controls="user_pass">
+                        <i class="fas fa-fw fa-wrench f_14 c_white"></i>
+                        <span class="f_13 cursor-pointer">Support</span>
+                      </a>
+                </li> -->
+                <!-- <input type="hidden" id="user_id" value="16009345"> -->
+                
+                <!-- <li class="sidebar-item">
+                    <a  class="sidebar-link" id="logout">
+                        <i class="fa-solid fa-right-from-bracket" ></i>
+                                                <span>Logout</span>
+                    </a>
+
+                    
+                </li> -->
+            </ul>
+        </li>
+                
+                
+            </ul>
+            
+
+
+
+
+
+        </aside>
+        
+        <script src="/static/cdn/js/jquery3.6.0.js"></script>
+        <!-- <script src="/static/cdn/sweetalert2/sweetalert2.js"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.8/sweetalert2.min.js"></script> -->
+    <script src="/static/cdn/js/bootstap5.3.js"></script>
+    <script src="/static/cdn/js/fontawesome6.5.1.js"></script>
+    <script src="/static/js/sidebar.js"></script>
+    <script src="/static/cdn/js/jqueryUI1.12.1.js"></script>
+    <script src="/static/cdn/sweetalert/js/sweetalert11.10.2.js"></script>
+</body>
+
+</html>

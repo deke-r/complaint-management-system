@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS</title>
+  <link rel="icon" href="/static/images/logo2.png">
+  <link rel="stylesheet" href="/static/css/repoen_tickets.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <%- include('partials/sidebar.ejs') %>
+
+      <div class="main">
+        <%- include('partials/header.ejs') %>
+
+        
+
+          <section class="page">
+            <div class="container-fluid my-2">
+                <div class="row">
+                    <div class="col-12 f_80 fw_bold">
+                        <i class="fa fa-home"></i> Dashboard / Tickets / Ticket Lists
+                    </div>
+                </div>
+              </div>
+        
+
+        
+              <div class="container-fluid mt-4">
+                <div class="container-fluid mt-3 border_t_g newmp bg-light py-2 rounded-3">
+                    <div class="row my-1">
+                        <div class="col-md-4 col-lg-3 my-2">
+                            <h6 class="fw_bold f_13 ms-1">Start Date :</h6>
+                            <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" id="startDate" name="expense"
+                                placeholder="Select Start Date" readonly>
+                        </div>
+                        <div class="col-md-4 col-lg-3 my-2">
+                            <h6 class="fw_bold f_13 ms-1">End Date :</h6>
+                            <input type="text" class="form-control border-leftb box_sdw11 f_13 fw_600" id="endDate" name="expense"
+                                placeholder="Select End Date" readonly>
+                        </div>
+                        <div class="col-md-4 col-lg-3 my-2">
+                            <h6 class="fw_bold f_13 ms-1">Complaint Category :</h6>
+                            <select class="form-select border-leftb box_sdw11 f_13 fw_600" id="category" aria-label="Default select example">
+                                <option selected disabled>Select</option>
+                                            <% for (var i=0; i < data1.length; i++) { %>
+                                                <option value="<%= data1[i].c_category %>">
+                                                    <%= data1[i].c_category %>
+                                                </option>
+                                                <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md-4 col-lg-3 my-2">
+                            <h6 class="fw_bold f_13 ms-1 ">Ticket Status :</h6>
+                            <select class="form-select border-leftb box_sdw11 f_13 fw_600" id="ticket_sts" aria-label="Default select example">
+                                <option selected disabled>Select</option>
+                                <% for (var e=1; e <= 4; e++) { %>
+                                    <option value="<%= data2[e].action_id %>">
+                                        <%= data2[e].action_value %>                                            
+                                    </option>
+                                    <% } %>
+                            </select>
+                        </div>
+                        <div class="col-md-8 col-lg-12 d-flex justify-content-end align-items-end my-2">
+                            <button class="btn f_13 fw_600 px-4 bg_gg  text-light  box_sdw11" id="filter_btn">Filter</button>
+
+                            <button class="btn f_13 fw_600 px-4 bg_gg  text-light  box_sdw11 ms-2" id="export_to_excel">Export to Excel</button>
+
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            
+            
+                <div class="container-fluid my-3  pt-4">
+                    <div class="container-fluid mt-3 rounded-3 border_t_g newmp bg-light py-4">
+                        <div class="row mx-2">
+                            <div class="col-12">
+                                <h6 class="f_16 fw_600">Ticket Lists</h6>
+                                <hr class="mt-0">
+                            </div>
+                        </div>
+                        <div class="row mt-2 mx-2">
+                            <div class=" table-responsive  px-2  h_350  me-2">
+                                <table class="table table-bordered table-responsive  table-striped" id="dataTables">
+                                    <thead id="thead">
+                                        <tr>
+                                            <th>Reopen Ticket No.</th>
+                                            <th>Previous Ticket No.</th>                                
+                                            <th>View</th>
+                                            <th>Status</th>
+                                            <th>Reopen Date</th>
+                                            <th>Ticket Catogery</th>
+                                            <th>Issue Type</th>
+                                            <th>TAT</th>
+                                            <th>SLA</th>
+                                            <th>Ticket Reopen By</th>
+                                            <th>Previous Ticket Raised By</th>
+                                            <th>Previous Ticket Raised On</th>
+                                            <th>Remarks</th>
+                                            <th>Product Category</th>
+                                            <th>Product Name</th>
+                                            <th>SKU Name</th>
+                                            <th>Batch No</th>
+                                            <th>Manufacturing Date</th>
+                                            <th>Customer Name</th>
+                                            <th>Customer Type</th>
+                                            <th>Customer Location</th>
+                                            <th>Quantity Purchase</th>
+                                            <th>Quantity Rejected</th>
+                                            <th>Visit Type</th>
+                                            <th>Person Meet</th>
+                                            <th>Customer Phone</th>
+                                            <th>In-Process By</th>
+                                            <th>In-Process At</th>
+                                            <th>Resolve By</th>
+                                            <th>Resolve At</th>
+                                            <th>Investigation date</th>
+                                            <th>Investigation details</th>
+                                            <th>Action Taken</th>
+                                            <th>Close By</th>
+                                            <th>Close At</th>
+                                            <th>Close Comment</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody">
+                                        <% for (var v=0; v < all_result.length; v++) { %>
+                                            <tr>
+                                            <td><%= all_result[v].reopen_ticket_id %></td>
+                                            <td><%= all_result[v].pre_ticket_id %></td>
+                                            <td>
+                                                <a class="f_15 text_blue" href="/reopen_complaint_view/<%= all_result[v].reopen_ticket_id %>/<%= all_result[v].pre_ticket_id %>" title="View Ticket"><i class="fa-solid fa-eye"></i></a>
+                                            </td>
+                                            <td class="ticket_status"><%= all_result[v].is_active %></td>
+                                            <td><%= all_result[v].reopen_ticket_date %></td>
+                                            <td><%= all_result[v].ticket_category %></td>
+                                            <td><%= all_result[v].ticket_type %></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><%= all_result[v].reopen_ticket_raised_by %></td>
+                                            <td><%= all_result[v].pre_ticket_raised_by %></td>
+                                            <td><%= all_result[v].pre_ticket_date %></td>
+                                            <td><%= all_result[v].description %></td>
+                                            <td><%= all_result[v].product_category %></td>
+                                            <td><%= all_result[v].product_name %></td>
+                                            <td><%= all_result[v].sku %></td>
+                                            <td><%= all_result[v].batch_no %></td>
+                                            <td><%= all_result[v].manufacturing_date %></td>
+                                            <td><%= all_result[v].customer_name %></td>
+                                            <td><%= all_result[v].customer_type %></td>
+                                            <td><%= all_result[v].customer_location %></td>
+                                            <td><%= all_result[v].quantity_purchage %></td>
+                                            <td><%= all_result[v].quantity_rejected %></td>
+                                            <td><%= all_result[v].visit_type %></td>
+                                            <td><%= all_result[v].person_meet %></td>
+                                            <td><%= all_result[v].customer_phone %></td>
+                                            <td><%= all_result[v].inprocess_by %></td>
+                                            <td><%= all_result[v].formatted_inprocess_at %></td>
+                                            <td><%= all_result[v].resolved_by  %></td>
+                                            <td><%= all_result[v].formatted_resolved_at  %></td>
+                                            <td><%= all_result[v].formated_investigated_at  %></td>
+                                            <td><%= all_result[v].investigation_details  %></td>
+                                            <td><%= all_result[v].action_taken  %></td>
+                                            <td><%= all_result[v].closed_by  %></td>
+                                            <td><%= all_result[v].formatted_closed_at  %></td>
+                                            <td><%= all_result[v].closed_comment  %></td>    
+                                        </tr>
+                                        <%}%>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  </section>
+
+  <script src="/static/js/reopen_tickets.js"></script>
+
+
+</body>
+
+</html>
